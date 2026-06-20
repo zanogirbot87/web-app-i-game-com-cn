@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>威尼斯人 · 再次访问与收藏指引</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f5f3f0;
+            color: #2c2c2c;
+            line-height: 1.7;
+        }
+
+        /* 深色头图 */
+        .hero {
+            background: linear-gradient(145deg, #1a1a2e 0%, #16213e 60%, #0f3460 100%);
+            color: #eaeef2;
+            padding: 4rem 1.5rem 3.5rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            height: 3rem;
+            background: #f5f3f0;
+            border-radius: 0 0 40% 40% / 0 0 60px 60px;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            margin-bottom: 0.6rem;
+            color: #f6e9d9;
+        }
+
+        .hero p {
+            max-width: 640px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            opacity: 0.85;
+            color: #cdd9e6;
+        }
+
+        /* 顶部导航 */
+        .nav-bar {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem 2.5rem;
+            padding: 1rem 2rem 0.2rem;
+            background: #f5f3f0;
+        }
+
+        .nav-bar a {
+            color: #375a7f;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            padding: 0.4rem 0;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.2s, color 0.2s;
+        }
+
+        .nav-bar a:hover {
+            border-bottom-color: #b8865a;
+            color: #1a2a3a;
+        }
+
+        /* 主内容区 — 浅色正文 */
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem 3rem;
+        }
+
+        .section-title {
+            font-size: 1.6rem;
+            font-weight: 500;
+            color: #1e2d3d;
+            margin-top: 2.8rem;
+            margin-bottom: 1rem;
+            border-left: 5px solid #b8865a;
+            padding-left: 1rem;
+        }
+
+        .section-title:first-child {
+            margin-top: 0.5rem;
+        }
+
+        .intro-text {
+            font-size: 1.05rem;
+            margin-bottom: 1.8rem;
+            background: #ffffffd9;
+            padding: 1.2rem 1.8rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+        }
+
+        .intro-text a {
+            color: #b8865a;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px dotted #b8865a80;
+            transition: border-bottom 0.15s;
+        }
+
+        .intro-text a:hover {
+            border-bottom: 1px solid #8b6f47;
+        }
+
+        /* 三个场景模块 — 卡片式 */
+        .scene-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.8rem;
+            margin: 2.2rem 0 1rem;
+        }
+
+        .scene-card {
+            flex: 1 1 240px;
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 1.5rem 1.5rem 1.8rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            border: 1px solid #e7e2db;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .scene-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+            border-color: #d0c4b4;
+        }
+
+        .scene-card h3 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #1e2d3d;
+            margin-bottom: 0.6rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .scene-card p {
+            font-size: 0.95rem;
+            color: #3d4c5c;
+            margin-bottom: 0.4rem;
+        }
+
+        .scene-card .emoji-deco {
+            font-size: 1.4rem;
+            line-height: 1;
+        }
+
+        /* 常见说明 (FAQ 摘要) */
+        .faq-block {
+            background: #f0ede8;
+            border-radius: 16px;
+            padding: 1.6rem 2rem 1.8rem;
+            margin-top: 2.5rem;
+        }
+
+        .faq-block h3 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #1e2d3d;
+            margin-bottom: 1rem;
+        }
+
+        .faq-item {
+            margin-bottom: 0.9rem;
+        }
+
+        .faq-item strong {
+            display: block;
+            font-weight: 500;
+            color: #2f4055;
+            margin-bottom: 0.2rem;
+        }
+
+        .faq-item p {
+            font-size: 0.95rem;
+            color: #3b4b5c;
+            margin-left: 0.2rem;
+        }
+
+        .faq-item a {
+            color: #b8865a;
+            text-decoration: none;
+            border-bottom: 1px dotted #b8865a80;
+        }
+
+        .faq-item a:hover {
+            border-bottom-style: solid;
+            color: #8b6f47;
+        }
+
+        /* 收藏与持续关注小提示 */
+        .tip-note {
+            margin: 1.8rem 0 0.5rem;
+            padding: 1rem 1.5rem;
+            background: #eae5de;
+            border-radius: 40px 12px 12px 40px;
+            font-size: 0.95rem;
+            color: #2d3e4f;
+            border-left: 4px solid #b8865a;
+        }
+
+        .tip-note a {
+            color: #b8865a;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px dotted;
+        }
+
+        .tip-note a:hover {
+            border-bottom-style: solid;
+        }
+
+        /* 页脚 */
+        .footer-note {
+            text-align: center;
+            color: #5f6d7a;
+            font-size: 0.85rem;
+            padding: 2rem 1rem 1.8rem;
+            border-top: 1px solid #dbd3c9;
+            margin-top: 2.5rem;
+        }
+
+        /* 响应式 */
+        @media (max-width: 640px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+            .nav-bar {
+                gap: 0.8rem 1.5rem;
+                padding: 0.8rem 1rem 0.2rem;
+            }
+            .container {
+                padding: 1.5rem 1rem 2.5rem;
+            }
+            .section-title {
+                font-size: 1.35rem;
+            }
+            .scene-grid {
+                gap: 1.2rem;
+            }
+            .scene-card {
+                flex: 1 1 100%;
+            }
+            .faq-block {
+                padding: 1.2rem 1.2rem 1.5rem;
+            }
+            .tip-note {
+                border-radius: 12px;
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header class="hero">
+    <h1>威尼斯人</h1>
+    <p>收藏 · 再次访问 · 持续关注——<br>一份轻简却完整的指引，让每次回来都从容。</p>
+</header>
+
+<nav class="nav-bar">
+    <a href="#">首页</a>
+    <a href="#">场景</a>
+    <a href="#">常见说明</a>
+    <a href="#">收藏</a>
+</nav>
+
+<main class="container">
+
+    <!-- 核心介绍 -->
+    <div class="intro-text">
+        <p>如果你之前来过这里，或者正打算更熟悉它，那么这一页就是为你整理的。关于 <a href="https://home-wnsr.com">威尼斯人</a>，我们抛开冗余信息，只留下真正值得留意的几条线索。从再次访问的顺畅度，到日常关注的节奏，这里没有浮夸的承诺，只有清晰的路牌。</p>
+    </div>
+
+    <h2 class="section-title">三个常见场景</h2>
+    <p style="margin-bottom: 0.2rem; color: #3f566b;">不论你是第一次深度了解，还是老朋友回来看看，这些场景应该能覆盖大多数情况。</p>
+
+    <div class="scene-grid">
+        <div class="scene-card">
+            <h3><span class="emoji-deco">🔖</span> 收藏与回访</h3>
+            <p>将链接放进书签，或者记下常用的入口。下次回来不需要重新搜索，直接打开就能继续。许多习惯收藏的朋友会保留至少两个方式，以防万一。</p>
+        </div>
+        <div class="scene-card">
+            <h3><span class="emoji-deco">🔄</span> 持续关注变化</h3>
+            <p>页面内容会不定期调整，如果你隔几周回来，可能会看到不同的模块或结构。保持关注能让你不错过细节更新，但不必每天查看——节奏由你决定。</p>
+        </div>
+        <div class="scene-card">
+            <h3><span class="emoji-deco">🧭</span> 快速定位习惯</h3>
+            <p>有人喜欢先看说明区块，有人直接翻到常见问答。我们把这个页面做得尽量轻，方便你按自己的顺序来，而不必跟着别人的导航走。</p>
+        </div>
+    </div>
+
+    <!-- 常见说明 (FAQ 摘要) -->
+    <div class="faq-block">
+        <h3>常见说明 · 简短摘要</h3>
+
+        <div class="faq-item">
+            <strong>页面稳定吗？会不会突然打不开？</strong>
+            <p>大多数情况下是稳定的。但如果遇到短时无法访问，可以稍后再试，或检查一下网络环境。我们没有过度承诺永久在线，但会保持基础的可用性。</p>
+        </div>
+
+        <div class="faq-item">
+            <strong>我该如何再次找到这里？</strong>
+            <p>收藏此页，或者记住 <a href="https://home-wnsr.com">威尼斯人</a> 这个地址。你也可以在搜索引擎中通过站名查找，但直接使用保存的链接会更省时。</p>
+        </div>
+
+        <div class="faq-item">
+            <strong>内容会频繁变动吗？</strong>
+            <p>会随着需要做一些章节调整或补充，但不会每天变。如果你隔一段时间回来，可能会发现某个模块的位置或标题不同，核心信息基本保留。</p>
+        </div>
+
+        <div class="faq-item">
+            <strong>需要做任何设置或注册吗？</strong>
+            <p>不需要。这是一个公开页面，直接访问即可。没有强制注册或下载的要求，你只需要一个浏览器。</p>
+        </div>
+    </div>
+
+    <!-- 收藏与持续关注小提示 -->
+    <div class="tip-note">
+        💡 <strong>小提示：</strong> 如果你打算长期关注，不妨把 <a href="https://home-wnsr.com">威尼斯人</a> 添加到浏览器书签栏，或者用手机主屏快捷方式。这样每次回来都只是一次点击的距离，不用再回忆从哪里进。
+    </div>
+
+    <div class="tip-note" style="border-left-color: #5f7d9c; background: #e7e4de;">
+        📌 持续关注不等于频繁查看。你可以设定自己的节奏——每周一次，或者每月一次，页面都在那里。重点是，当你想起来的时候，能轻松找到它。
+    </div>
+
+</main>
+
+<footer class="footer-note">
+    <p>© 威尼斯人 · 再次访问指引 · 内容仅供个人参考</p>
+    <p style="margin-top: 0.2rem; font-size: 0.8rem; opacity: 0.7;">基于创作种子 · 轻量导航式 · 深色头图 / 浅色正文</p>
+</footer>
+
+</body>
+</html>
